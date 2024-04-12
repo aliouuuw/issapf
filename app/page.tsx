@@ -41,7 +41,7 @@ export default function Home() {
       </AuroraBackground>
       <div className="absolute z-10 top-0 left-0 w-screen h-screen flex">
         <Image
-          src={"/issapf2.png"}
+          src={"/issapf0.png"}
           alt="Bg image"
           fill
           quality={100}
