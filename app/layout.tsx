@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Questrial, Lato } from "next/font/google";
+import { Inter, Questrial, Lato , DM_Sans} from "next/font/google";
 import "./globals.css";
 
-const inter = Lato({ subsets: ["latin"] , weight: "400"});
+const inter = DM_Sans({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
