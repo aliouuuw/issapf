@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { AuroraBackground } from "./ui/aurora-background";
-import { delay, motion, useMotionValueEvent, useScroll} from "framer-motion";
+import { motion, useMotionValueEvent, useScroll} from "framer-motion";
 import Image from "next/image";
 import { ChevronsDown } from 'lucide-react';
 
@@ -10,8 +10,7 @@ function Hero() {
   const [xValue, setXValue] = useState(0);
   const { scrollYProgress } = useScroll()
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest)
-    setXValue(latest*100)
+    setXValue(latest*300)
   })
   
   return (
@@ -22,7 +21,7 @@ function Hero() {
             <p>Issa Ndao</p>
             <div>Menu</div>
           </div>
-          <div className="z-20 relative flex items-center justify-center h-[12rem] text-5xl md:text-9xl">
+          <div className="z-20 relative flex items-center justify-center h-[12rem] text-5xl md:text-9xl xl:text-[12rem]">
             <h1 className="w-fit font-extrabold">
               {text.map((el, i) => (
                 <motion.span
@@ -72,7 +71,6 @@ function Hero() {
           alt="Bg image"
           fill
           quality={100}
-          priority
           className="object-cover object-center md:object-contain md:object-bottom grayscale contrast-[1.10]"
         ></Image>
       </div>

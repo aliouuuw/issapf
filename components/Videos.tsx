@@ -1,7 +1,26 @@
-import React from "react";
-import { motion } from "framer-motion";
+"use client";
+import { EmblaOptionsType } from 'embla-carousel'
+import EmblaCarousel from "./ui/embla-carousel";
+import { motion, useMotionValueEvent, useScroll, useTransform} from "framer-motion";
+import {  useState } from "react";
 
-function Videos() {
+type VideoProps = {
+  videoIDs: string[];
+};
+
+const Videos: React.FC<VideoProps> = ({ videoIDs }) => {
+  //const ids =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const [scale, setScale] = useState(0.2);
+  const { scrollYProgress } = useScroll()
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setScale(latest)
+  })
+  // Calculate the x-offset based on scrollYProgress
+  const xOffset = useTransform(scrollYProgress, [0, 1], [500, 0]);
+
+  const OPTIONS: EmblaOptionsType = { loop: true }
+
+
   return (
     <section className="px-4 py-8 md:px-16 space-y-4 w-screen">
       <div className="flex items-center gap-2">
@@ -18,22 +37,14 @@ function Videos() {
       <p className="font-light">
         Check out all my videos including drone shots, reels, short movies,...
       </p>
-      <div className="w-full rounded-xl h-[50vh] md:h-[70vh] border ">
-        {/* <video autoPlay controls className="w-full h-full">
-          <source
-            src="https://www.youtube.com/watch?v=krDWc30PAGg"
-            type="video/mp4"
-          />
-        </video> */}
-        {/* <iframe
-          src="https://drive.google.com/file/d/195YT3GH4Kpjz_tiMBdnqvz32CdQXMD7G/view?usp=sharing&t=1"
-          frameBorder={0}
-          allowFullScreen
-          className="w-full h-full rounded-xl"
-        /> */}
-      </div>
+      <motion.div 
+        className="relative w-full rounded-xl h-[50vh] md:h-[90vh]"
+        style={{ scale, x: xOffset }}
+        >
+        <EmblaCarousel slides={videoIDs} options={OPTIONS} />
+      </motion.div>
     </section>
   );
-}
+};
 
 export default Videos;

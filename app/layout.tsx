@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Questrial, Lato , DM_Sans} from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = DM_Sans({ subsets: ["latin"]});
