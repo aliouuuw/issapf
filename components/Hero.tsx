@@ -58,9 +58,8 @@ function Hero() {
             <ChevronsDown size={32} strokeWidth={1}/>
             <div className="max-md:hidden">SCROLL</div>
             </div>
-            <div className="max-w-52 md:max-w-72 max-sm:text-sm text-justify text-balanced">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
-              atque, aspernatur et deleniti quidem reiciendis.
+            <div className="max-w-52 md:max-w-72 max-md:text-sm text-justify text-balanced">
+            Through the lens of creativity, we capture the essence of every moment. <br/> Welcome to a world where imagination meets reality, where memories are immortalized in pixels and film.
             </div>
           </div>
         </div>

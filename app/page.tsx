@@ -3,8 +3,9 @@ import Videos from "@/components/Videos";
 
 
 async function getIds() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
   try {
-    const response = await fetch("http://localhost:3000/api/ids",
+    const response = await fetch(`${apiUrl}/api/ids`,
       { method: "POST",
         body: JSON.stringify({url: "https://drive.google.com/drive/folders/1-ZFL2E25PSELuEn-YSVwgd9zarfxwxQt"})
       },
