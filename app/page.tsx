@@ -2,8 +2,8 @@ import Hero from "@/components/Hero";
 import Videos from "@/components/Videos";
 
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL
 async function getIds() {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL
   try {
     const response = await fetch(`${apiUrl}/api/ids`,
       { method: "POST",
@@ -20,6 +20,9 @@ async function getIds() {
 }
 
 export default async function Home() {
+  if (!apiUrl){
+    return null
+  }
   const videoIDs: string[] = await getIds()
   return (
     <main className="relative">
