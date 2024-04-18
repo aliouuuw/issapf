@@ -1,33 +1,52 @@
 import Hero from "@/components/Hero";
 import Videos from "@/components/Videos";
+import { sanityClient } from "@/utils/sanity-client";
 
+type VideoType = {
+  source: string
+}
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL
-async function getIds() {
+// async function getIds() {
+//   try {
+//     const response = await fetch(`${apiUrl}/api/ids`,
+//       { method: "POST",
+//         body: JSON.stringify({url: "https://drive.google.com/drive/folders/1-ZFL2E25PSELuEn-YSVwgd9zarfxwxQt"})
+//       },
+//     )
+//     const res = await response.json()
+//     const videoIds = res.fileIDs
+//     return videoIds 
+//   } catch (error) {
+//     console.log(error)
+//     return
+//   }
+// }
+
+async function getVideos(){
   try {
-    const response = await fetch(`${apiUrl}/api/ids`,
-      { method: "POST",
-        body: JSON.stringify({url: "https://drive.google.com/drive/folders/1-ZFL2E25PSELuEn-YSVwgd9zarfxwxQt"})
-      },
-    )
-    const res = await response.json()
-    const videoIds = res.fileIDs
-    return videoIds 
+    const videos = await sanityClient.fetch(
+      `*[_type == 'video']{
+        "source": fichier.asset -> url,
+      }`,
+      {},
+      { next: { revalidate: 0 } }
+    );
+    return videos;
   } catch (error) {
-    console.log(error)
-    return
+    throw new Error("Error fetching videos");
   }
 }
 
 export default async function Home() {
-  if (!apiUrl){
-    return null
-  }
-  const videoIDs: string[] = await getIds()
+
+  const videos: VideoType[] = await getVideos()
   return (
     <main className="relative">
       <Hero />
-      <Videos videoIDs = {videoIDs} />
+      <Videos videos = {videos} />
+      <div className="h-screen">
+        Images
+      </div>
     </main>
   );
 }

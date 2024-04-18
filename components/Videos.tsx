@@ -1,28 +1,34 @@
 "use client";
-import { EmblaOptionsType } from 'embla-carousel'
-import EmblaCarousel from "./ui/embla-carousel";
 import { motion, useMotionValueEvent, useScroll, useTransform} from "framer-motion";
-import {  useState } from "react";
+import {  useRef, useState } from "react";
+import HorizontalScrollCarousel from "./ui/carousel";
+
+type VideoType = {
+  source: string
+}
+
 
 type VideoProps = {
-  videoIDs: string[];
+  videos: VideoType[];
 };
 
-const Videos: React.FC<VideoProps> = ({ videoIDs }) => {
+const Videos: React.FC<VideoProps> = ({ videos }) => {
   //const ids =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const targetRef = useRef(null)
   const [scale, setScale] = useState(0.2);
-  const { scrollYProgress } = useScroll()
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end end"]
+  })
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setScale(latest)
   })
   // Calculate the x-offset based on scrollYProgress
   const xOffset = useTransform(scrollYProgress, [0, 1], [500, 0]);
 
-  const OPTIONS: EmblaOptionsType = { loop: true }
-
 
   return (
-    <section className="px-4 py-8 md:px-16 space-y-4 w-screen">
+    <section ref={targetRef} className="px-4 py-8 md:px-16 space-y-4 w-screen">
       <div className="flex items-center gap-2">
         <span className="bg-white w-[2px] h-12"></span>
         <motion.h1
@@ -38,10 +44,10 @@ const Videos: React.FC<VideoProps> = ({ videoIDs }) => {
         Check out all my videos including drone shots, reels, short movies,...
       </p>
       <motion.div 
-        className="relative w-full rounded-xl h-[50vh] md:h-[90vh]"
+        className="relative w-full rounded-xl"
         style={{ scale, x: xOffset }}
         >
-        <EmblaCarousel slides={videoIDs} options={OPTIONS} />
+      <HorizontalScrollCarousel videos = {videos} />
       </motion.div>
     </section>
   );

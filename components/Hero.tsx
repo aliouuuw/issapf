@@ -38,14 +38,14 @@ function Hero() {
               ))}
             </h1>
             <motion.h1 
-              className="absolute w-fit font-extrabold text-stroke-1 text-transparent"
+              className="absolute w-fit font-extrabold text-stroke-1 text-transparent overflow-y-clip"
               initial={{opacity:0}}
               animate={{opacity:1}}
               transition={{delay: 1}}
               style={{x: xValue}}
             ><span className="invisible">ISSA</span> NDAO</motion.h1>
             <motion.h1 
-              className="absolute w-fit font-extrabold text-stroke-1 text-transparent"
+              className="absolute w-fit font-extrabold text-stroke-1 text-transparent overflow-y-clip"
               initial={{opacity:0}}
               animate={{opacity:1}}
               transition={{delay: 1}}
