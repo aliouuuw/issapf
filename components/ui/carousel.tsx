@@ -85,7 +85,7 @@ const HorizontalScrollCarousel = ({ videos }: CarouselProps) => {
           >
             {videos.map((video, index) => {
               return (
-              <div key={index} className="h-fit w-fit">
+              <div key={index} className="h-fit w-screen md:w-1/2 flex">
                 <ReactPlayer url={video.source} controls />
               </div>)
             })}
