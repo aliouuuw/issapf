@@ -23,13 +23,6 @@ export default {
         name: "fichier",
         type: "file",
         title: "Fichier",
-        fields: [
-          {
-            name: "description",
-            type: "string",
-            title: "Description",
-          }
-        ],
       },
       {
         name: "datetime",

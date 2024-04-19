@@ -16,7 +16,7 @@ function Hero() {
   return (
     <>
       <AuroraBackground classID="max-w-screen h-screen">
-        <div className="max-w-screen h-screen text-white z-10 flex flex-col justify-between py-4 px-8 md:px-16">
+        <div className="max-w-screen h-screen text-white z-10 flex flex-col justify-between py-8 px-8 md:px-16">
           <div className="flex justify-between screen font-light">
             <p>Issa Ndao</p>
             <div>Menu</div>
@@ -52,14 +52,13 @@ function Hero() {
               style={{x: -xValue}}
             >ISSA <span className="invisible">NDAO</span></motion.h1>
           </div>
-          <div className="z-20 flex justify-between items-end font-light">
+          <div className="z-20 flex justify-between items-center md:items-end font-light">
             <div className="flex items-center text-sm animate-pulse">
 
-            <ChevronsDown size={32} strokeWidth={1}/>
-            <div className="max-md:hidden">SCROLL</div>
+            <ChevronsDown size={32} strokeWidth={1} className="h-12 w-12 "/>
             </div>
-            <div className="max-w-52 md:max-w-72 max-md:text-sm text-justify text-balanced">
-            Through the lens of creativity, we capture the essence of every moment. <br/> Welcome to a world where imagination meets reality, where memories are immortalized in pixels and film.
+            <div className="max-w-52 md:max-w-72 md:font-medium text-pretty">
+            Welcome to a world where imagination meets reality, where memories are immortalized in pixels and film.
             </div>
           </div>
         </div>

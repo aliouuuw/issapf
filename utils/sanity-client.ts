@@ -5,6 +5,7 @@ export const sanityClient = createClient({
   apiVersion: "2023-05-03",
   projectId: "gyris7dt",
   dataset: "production",
+  token: process.env.NEXT_PUBLIC_SANITY_TOKEN,
   useCdn: false,
 });
 

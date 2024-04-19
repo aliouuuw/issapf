@@ -41,7 +41,7 @@ const Videos: React.FC<VideoProps> = ({ videos }) => {
         </motion.h1>
       </div>
       <p className="font-light">
-        Check out all my videos including drone shots, reels, short movies,...
+        Scroll to check out all my videos including drone shots, reels, short movies,...👇
       </p>
       <motion.div 
         className="relative w-full rounded-xl"

@@ -81,11 +81,11 @@ const HorizontalScrollCarousel = ({ videos }: CarouselProps) => {
         <div className="sticky top-0 flex h-fit items-center overflow-hidden">
           <motion.div
             style={{ x: displacement }}
-            className="flex flex-none gap-8 items-center"
+            className="flex flex-none gap-x-8 md:gap-x-12 items-center"
           >
             {videos.map((video, index) => {
               return (
-              <div key={index} className="h-fit w-screen md:w-1/2 flex">
+              <div key={index} className="h-fit w-screen md:w-1/2 flex hover:cursor-pointer">
                 <ReactPlayer url={video.source} controls />
               </div>)
             })}
