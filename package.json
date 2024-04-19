@@ -12,6 +12,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/react-loader": "^1.9.12",
     "@sanity/vision": "^3.38.0",
+    "sanity-plugin-media": "^2.2.5",
     "cheerio": "^1.0.0-rc.12",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.28",
