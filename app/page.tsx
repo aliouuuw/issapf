@@ -5,8 +5,14 @@ import Images from "@/components/Images";
 import Services from "@/components/Services";
 import Videos from "@/components/Videos";
 import { sanityClient } from "@/utils/sanity-client";
+import { Metadata } from "next";
 //import { promises as fs } from "fs";
 
+
+export const metadata: Metadata = {
+  title: "Issa Ndao",
+  description: "My Videography & Photography Portfolio",
+};
 
 type VideoType = {
   source: string;

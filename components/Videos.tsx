@@ -24,7 +24,7 @@ const Videos: React.FC<VideoProps> = ({ videos }) => {
     setScale(latest)
   })
   // Calculate the x-offset based on scrollYProgress
-  const xOffset = useTransform(scrollYProgress, [0, 1], [500, 0]);
+  const xOffset = useTransform(scrollYProgress, [0, 1], [-500, 0]);
 
 
   return (

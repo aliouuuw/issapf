@@ -71,7 +71,7 @@ const Images: React.FC<ImageProps> = ({ images }) => {
           <select
             onChange={handleFilterChange}
             value={selectedType}
-            className="block w-auto border md:text-lg mb-4 bg-transparent py-2 pr-4  rounded-md"
+            className="block w-auto border md:text-lg mb-4 bg-transparent py-2 px-2  rounded-md"
           >
             <option value="all">All</option>
             <option value="street">Street</option>
