@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 // const cards = [
 //   {

@@ -28,7 +28,7 @@ const Videos: React.FC<VideoProps> = ({ videos }) => {
 
 
   return (
-    <section ref={targetRef} className="px-4 py-8 md:px-16 space-y-4 w-screen">
+    <section id="videos" ref={targetRef} className="px-4 py-8 md:px-16 space-y-4 w-screen">
       <div className="flex items-center gap-2">
         <span className="bg-white w-[2px] h-12"></span>
         <motion.h1

@@ -1,8 +1,12 @@
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer"
 import Hero from "@/components/Hero";
 import Images from "@/components/Images";
+import Services from "@/components/Services";
 import Videos from "@/components/Videos";
 import { sanityClient } from "@/utils/sanity-client";
-import { promises as fs } from "fs";
+//import { promises as fs } from "fs";
+
 
 type VideoType = {
   source: string;
@@ -103,6 +107,9 @@ export default async function Home() {
       <Hero />
       <Videos videos={videos} />
       <Images images={images} />
+      <Services />
+      <Contact />
+      <Footer />
     </main>
   );
 }
