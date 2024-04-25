@@ -11,7 +11,7 @@ function Hero() {
   const words = "Welcome to a world where imagination meets reality, where memories are immortalized in pixels and film."
 
   useEffect(()=> {
-    animate([["#hero_photo", {y: [1000, 0], opacity: [0, 1]}, {delay: 4, duration: 1.2} ],])
+    animate([["#hero_photo", {y: [1000, 0], opacity: [0, 1]}, {delay: 5, duration: 1.2} ],])
   }, [])
   
   return (
