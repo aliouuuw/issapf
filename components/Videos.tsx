@@ -9,7 +9,7 @@ type VideoType = {
 
 
 type VideoProps = {
-  videos: VideoType[];
+  videos?: VideoType[];
 };
 
 const Videos: React.FC<VideoProps> = ({ videos }) => {
@@ -29,19 +29,18 @@ const Videos: React.FC<VideoProps> = ({ videos }) => {
 
   return (
     <section id="videos" ref={targetRef} className="px-4 py-8 md:px-16 space-y-4 w-screen">
-      <div className="flex items-center gap-2">
-        <span className="bg-white w-[2px] h-12"></span>
+      <div className="flex items-center justify-center gap-2">
         <motion.h1
-          className="font-semibold text-4xl md:text-6xl "
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="font-semibold underline text-4xl md:text-6xl "
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "circOut", duration: 0.5 }}
         >
           Videography
         </motion.h1>
       </div>
-      <p className="font-light">
-        Scroll to check out all my videos including drone shots, reels, short movies,...👇
+      <p className="font-light text-center">
+       Check out all my videos including drone shots 🕹️, reels 🎞️, and short movies 🎬.
       </p>
       <motion.div 
         className="relative w-full rounded-xl"

@@ -27,7 +27,7 @@ type ImageType = {
 async function getVideos() {
   try {
     const videos = await sanityClient.fetch(
-      `*[_type == 'video']{
+      `*[_type == 'video'] | order(datetime desc){
         "source": fichier.asset -> url,
       }`,
       {},

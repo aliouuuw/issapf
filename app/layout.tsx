@@ -1,12 +1,12 @@
 "use client";
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Raleway, Nunito_Sans } from "next/font/google";
 import { usePathname } from "next/navigation";
 import SplashScreen from "@/components/SplashScreen";
 import "./globals.css";
 import { useEffect, useState } from "react";
 
-const inter = DM_Sans({ subsets: ["latin"] });
+const inter = Nunito_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,

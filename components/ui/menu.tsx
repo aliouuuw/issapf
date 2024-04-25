@@ -13,13 +13,13 @@ const Menu = ({ href }: any) => {
       onMouseLeave={() => setOpen(false)}
       className="z-20 relative w-full h-fit hover:cursor-pointer flex flex-col items-end"
     >
-      <a href={href} className="relative">
+      <a href={href} className="relative hover:opacity-50">
         Menu
         <span
           style={{
             transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
           }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-white transition-transform duration-300 ease-out"
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-[#EF0134] transition-transform duration-300 ease-out"
         />
       </a>
       <AnimatePresence>

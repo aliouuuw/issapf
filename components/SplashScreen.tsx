@@ -1,48 +1,31 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { animate } from "framer-motion";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
 
 const SplashScreen = ({ finishLoading }: any) => {
-  const [isMounted, setIsMounted] = useState(false);
-  const controls = useAnimation();
-
-  const animate = async () => {
-    await controls.start({ scale: 2 });
-  };
+  const [val, setVal] = useState(50)
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsMounted(true);
-      animate();
-      finishLoading();
-    }, 100);
-    return () => clearTimeout(timeout);
+    const timeout = setTimeout(() => {finishLoading()}, 6000)
+    //  animate([["#logo", {opacity: 0}, {delay: 0.5}],["#logo", {scale:1.5, opacity:1},], ["#logo", {scale:1}]])
+    //  return () => clearTimeout(timeout)
   }, []);
 
   return (
-    <>
-      {isMounted && (
-        <div className="flex h-screen items-center justify-center">
-          {/* <Image
-            id="logo"
-            src="/issalogo.png"
-            alt="My logo"
-            className="invert"
-            width={60}
-            height={60}
-          /> */}
-          <motion.div
-            id="logo"
-            className="h-32 w-fit border bg-zinc-800"
-            initial={{ scale: 1 }}
-            animate={controls}
-          >
-            Logo
-          </motion.div>
-        </div>
-      )}
-    </>
+    <div className={`z-[${val}] flex h-screen w-screen items-center justify-center bg-black`}>
+      
+      {/* <Image id="logo" src="/issathecreator.png" alt="logo" width={200} height={200} /> */}
+      
+      <video
+        id="video"
+        autoPlay
+        muted
+        className="h-full w-screen"
+      >
+        <source src="intro.mp4" type="video/mp4" />
+      </video>
+    </div>
   );
 };
 
