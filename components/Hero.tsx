@@ -11,7 +11,7 @@ function Hero() {
   const words = "Welcome to a world where imagination meets reality, where memories are immortalized in pixels and film."
 
   useEffect(()=> {
-    animate([["#hero_photo", {y: [1000, 0], opacity: [0, 1]}, {delay: 5} ],])
+    animate([["#hero_photo", {y: [1000, 0], opacity: [0, 1]}, {delay: 4, duration: 1.2} ],])
   }, [])
   
   return (
@@ -34,7 +34,7 @@ function Hero() {
             </div>
             <div className="max-w-52 md:max-w-72 text-pretty">
             Location:
-            <span className="text-[#EF0134]"> Sudbury, ON, CA.</span>
+            <span className="text-[#EF0134] animate-pulse"> Sudbury, ON, CA.</span>
             </div>
           </div>
         </div>

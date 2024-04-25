@@ -79,9 +79,12 @@ const Images: React.FC<ImageProps> = ({ images }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "circOut", duration: 0.5 }}
         >
-          Photography
+          Memories
         </motion.h1>
       </div>
+      <p className="font-light text-center">
+       Below are all my photos including portraits 👩‍🦰, drone 🕹️, nature 🌅, car 🏎️ and street photos 🏙️.
+      </p>
       <div className="mx-auto">
         {/* Drone */}
         <div className="space-y-4 pt-8">

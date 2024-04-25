@@ -6,7 +6,7 @@ import SplashScreen from "@/components/SplashScreen";
 import "./globals.css";
 import { useEffect, useState } from "react";
 
-const inter = Nunito_Sans({ subsets: ["latin"] });
+const inter = DM_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,

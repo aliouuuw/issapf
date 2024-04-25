@@ -9,7 +9,7 @@ const SplashScreen = ({ finishLoading }: any) => {
   useEffect(() => {
     const timeout = setTimeout(() => {finishLoading()}, 6000)
     //  animate([["#logo", {opacity: 0}, {delay: 0.5}],["#logo", {scale:1.5, opacity:1},], ["#logo", {scale:1}]])
-    //  return () => clearTimeout(timeout)
+    return () => clearTimeout(timeout)
   }, []);
 
   return (
