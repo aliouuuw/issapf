@@ -38,7 +38,7 @@ export default function Header() {
       </div>
       <div className="max-md:hidden flex flex-wrap gap-8 justify-center items-center hover:[&_a]:underline hover:[&_a]:text-[#EF0134]">
         <a href="#videos">VIDEOS</a>
-        <a href="#memos">MEMORIES</a>
+        <a href="#memos">MEMORIEZ</a>
         <a href="#services">SERVICES</a>
       </div>
       <div className="flex items-center justify-end">

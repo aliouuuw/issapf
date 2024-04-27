@@ -79,7 +79,7 @@ const Images: React.FC<ImageProps> = ({ images }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "circOut", duration: 0.5 }}
         >
-          Memories
+          Memoriez
         </motion.h1>
       </div>
       <p className="font-light text-center">
