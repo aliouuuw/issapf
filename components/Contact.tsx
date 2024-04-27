@@ -30,7 +30,7 @@ export default function Contact() {
             <div className="space-y-1">
               <p className="text-sm font-medium">Email:</p>
               <a className="text-zinc-400 text-sm hover:underline" href="mailto:issathecreator@gmail">
-              issathecreator@gmail
+              issathecreator@gmail.com
               </a>
             </div>
           </div>

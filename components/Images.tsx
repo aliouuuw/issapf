@@ -69,8 +69,8 @@ const Images: React.FC<ImageProps> = ({ images }) => {
 
   return (
     <section
-      id="images"
-      className="relative px-4 py-8 md:px-16 space-y-4 h-fit w-screen font-light"
+      id="memos"
+      className="relative z-0 px-4 py-8 md:px-16 space-y-4 h-fit w-screen font-light"
     >
       <div className="flex items-center justify-center gap-2">
         <motion.h1

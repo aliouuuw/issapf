@@ -17,9 +17,10 @@ export const TextGenerateEffect = ({
       "span",
       {
         opacity: 1,
+        filter: "blur(0)"
       },
       {
-        duration: 2,
+        duration: 1,
         delay: stagger(0.2),
       }
     );
@@ -32,7 +33,7 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="opacity-0"
+              className="opacity-0 blur-[2px]"
             >
               {word}{" "}
             </motion.span>

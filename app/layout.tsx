@@ -28,10 +28,14 @@ export default function RootLayout({
       <body className={inter.className}>
         {isLoading && isHome ? (
           <SplashScreen finishLoading={() => setIsLoading(false)} />
-        ) : (
-          <>{children}</>
-        )}
+        ) :
+          <>{children}</>}
       </body>
     </html>
   );
 }
+/* 
+{isLoading && isHome ? (
+          <SplashScreen finishLoading={() => setIsLoading(false)} />
+        ) :
+*/

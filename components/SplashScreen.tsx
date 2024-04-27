@@ -1,30 +1,44 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { animate } from "framer-motion";
-import Image from "next/image";
+
 
 const SplashScreen = ({ finishLoading }: any) => {
-  const [val, setVal] = useState(50)
+  const [val, setVal] = useState(40);
+  const [screen, setScreen] = useState<number>(window.innerWidth);
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {finishLoading()}, 6000)
-    //  animate([["#logo", {opacity: 0}, {delay: 0.5}],["#logo", {scale:1.5, opacity:1},], ["#logo", {scale:1}]])
-    return () => clearTimeout(timeout)
+    const handleResize = () => {
+      setScreen(window.innerWidth);
+      console.log(window.innerWidth)
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Initial check for screen size
+    handleResize();
+
+    // Cleanup function to remove event listener
+    return () => {window.removeEventListener("resize", handleResize); clearTimeout(timeout)}
   }, []);
 
   return (
-    <div className={`z-[${val}] flex h-screen w-screen items-center justify-center bg-black`}>
-      
-      {/* <Image id="logo" src="/issathecreator.png" alt="logo" width={200} height={200} /> */}
-      
-      <video
-        id="video"
-        autoPlay
-        muted
-        className="h-full w-screen"
-      >
-        <source src="intro.mp4" type="video/mp4" />
-      </video>
+    <div
+      className={`z-[${val}] flex h-screen w-screen items-center justify-center bg-black`}
+    >
+      {(screen < 640) ? (
+        <video id="video" playsInline autoPlay muted className="h-full w-screen">
+          <source src="intro_sm.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : (
+        <video id="video" playsInline autoPlay muted className="h-full w-screen">
+          <source src="intro_lg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer"
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Images from "@/components/Images";
 import Services from "@/components/Services";
@@ -109,13 +110,16 @@ export default async function Home() {
   const videos: VideoType[] = await getVideos();
   const images: ImageType[] = await getPhotos();
   return (
+    <>
+    <Header />
     <main className="relative">
       <Hero />
       <Videos videos={videos} />
       <Images images={images} />
       <Services />
       <Contact />
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }
