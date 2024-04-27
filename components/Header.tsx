@@ -26,7 +26,7 @@ export default function Header() {
         scrolling ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="relative w-28 md:w-36 h-16">
+      <div className="relative w-fit h-16">
         <Image
           src="/issathecreator.png"
           alt="Issa logo"

@@ -1,6 +1,5 @@
 "use client";
-import type { Metadata } from "next";
-import { DM_Sans, Raleway, Nunito_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { usePathname } from "next/navigation";
 import SplashScreen from "@/components/SplashScreen";
 import "./globals.css";
@@ -34,8 +33,3 @@ export default function RootLayout({
     </html>
   );
 }
-/* 
-{isLoading && isHome ? (
-          <SplashScreen finishLoading={() => setIsLoading(false)} />
-        ) :
-*/
